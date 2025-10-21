@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú - Burger House</title>
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="funciones.js"></script>
 </head>
 <body class="oscuro">
   <header>
@@ -31,17 +32,17 @@
         <img src="imagenes/bacon-cheese-burg.jpg" alt="Bacon Cheese">
         <h3>Bacon Cheese</h3>
         <p>Queso cheddar, bacon y salsa especial.</p>
-        <p><strong>Precio: $2500</strong></p>
+        <p id="precio-0"><strong>Precio: $2500</strong></p>
         <form class="oscuro">
           <label>Medallones:
-            <select>
+            <select id="med-0" onchange="actualizarPrecio(0)">
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
           </label>
-          <label><input type="checkbox"> Con papas</label>
-          <label><input type="checkbox"> Con bebida</label>
+          <label><input id="papas-0" type="checkbox" onchange="actualizarPrecio(0)"> Con papas</label>
+          <label><input id="bebida-0" type="checkbox" onchange="actualizarPrecio(0)"> Con bebida</label>
           <button type="button" onclick="agregarCarrito(0)">Agregar al carrito</button>
         </form>
       </div>
@@ -50,17 +51,17 @@
         <img src="imagenes/clasica-burg.jpg" alt="Clásica">
         <h3>Clásica</h3>
         <p>Lechuga, tomate, cebolla y mayonesa casera.</p>
-        <p><strong>Precio: $2200</strong></p>
+        <p id="precio-1"><strong>Precio: $2200</strong></p>
         <form class="oscuro">
           <label>Medallones:
-            <select>
+            <select id="med-1" onchange="actualizarPrecio(1)">
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
           </label>
-          <label><input type="checkbox"> Con papas</label>
-          <label><input type="checkbox"> Con bebida</label>
+          <label><input id="papas-1" type="checkbox" onchange="actualizarPrecio(1)"> Con papas</label>
+          <label><input id="bebida-1" type="checkbox" onchange="actualizarPrecio(1)"> Con bebida</label>
           <button type="button" onclick="agregarCarrito(1)">Agregar al carrito</button>
         </form>
       </div>
@@ -69,17 +70,17 @@
         <img src="imagenes/veggie-burg.jpg" alt="Veggie">
         <h3>Veggie</h3>
         <p>Medallón vegano, queso brie y guacamole casero.</p>
-        <p><strong>Precio: $2300</strong></p>
+        <p id="precio-2"><strong>Precio: $2300</strong></p>
         <form class="oscuro">
           <label>Medallones:
-            <select>
+            <select id="med-2" onchange="actualizarPrecio(2)">
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
           </label>
-          <label><input type="checkbox"> Con papas</label>
-          <label><input type="checkbox"> Con bebida</label>
+          <label><input id="papas-2" type="checkbox" onchange="actualizarPrecio(2)"> Con papas</label>
+          <label><input id="bebida-2" type="checkbox" onchange="actualizarPrecio(2)"> Con bebida</label>
           <button type="button" onclick="agregarCarrito(2)">Agregar al carrito</button>
         </form>
       </div>
@@ -88,17 +89,17 @@
         <img src="imagenes/route-66-burb.jpg" alt="Hamburguesa Ruta 66">
         <h3>Ruta 66</h3>
         <p>Salsa especial, queso emmental, hongos de pino y cebolla caramelizada.</p>
-        <p><strong>Precio: $2700</strong></p>
+        <p id="precio-3"><strong>Precio: $2700</strong></p>
         <form class="oscuro">
           <label>Medallones:
-            <select>
+            <select id="med-3" onchange="actualizarPrecio(3)">
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
           </label>
-          <label><input type="checkbox"> Con papas</label>
-          <label><input type="checkbox"> Con bebida</label>
+          <label><input id="papas-3" type="checkbox" onchange="actualizarPrecio(3)"> Con papas</label>
+          <label><input id="bebida-3" type="checkbox" onchange="actualizarPrecio(3)"> Con bebida</label>
           <button type="button" onclick="agregarCarrito(3)">Agregar al carrito</button>
         </form>
       </div>
@@ -107,17 +108,17 @@
         <img src="imagenes/mexicana-burg.jpg" alt="Hamburguesa Mexicana">
         <h3>Mexicana</h3>
         <p>Jalapeños, cheddar, guacamole, barbacoa y nachos.</p>
-        <p><strong>Precio: $2600</strong></p>
+        <p id="precio-4"><strong>Precio: $2600</strong></p>
         <form class="oscuro">
           <label>Medallones:
-            <select>
+            <select id="med-4" onchange="actualizarPrecio(4)">
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
           </label>
-          <label><input type="checkbox"> Con papas</label>
-          <label><input type="checkbox"> Con bebida</label>
+          <label><input id="papas-4" type="checkbox" onchange="actualizarPrecio(4)"> Con papas</label>
+          <label><input id="bebida-4" type="checkbox" onchange="actualizarPrecio(4)"> Con bebida</label>
           <button type="button" onclick="agregarCarrito(4)">Agregar al carrito</button>
         </form>
       </div>
@@ -126,17 +127,17 @@
         <img src="imagenes/pollo-burg.jpg" alt="Hamburguesa Pollo">
         <h3>Pollo Crispy</h3>
         <p>Pollo crispy, alioli, tomate, lechuga y huevo frito.</p>
-        <p><strong>Precio: $2800</strong></p>
+        <p id="precio-5"><strong>Precio: $2800</strong></p>
         <form class="oscuro">
           <label>Medallones:
-            <select>
+            <select id="med-5" onchange="actualizarPrecio(5)">
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
           </label>
-          <label><input type="checkbox"> Con papas</label>
-          <label><input type="checkbox"> Con bebida</label>
+          <label><input id="papas-5" type="checkbox" onchange="actualizarPrecio(5)"> Con papas</label>
+          <label><input id="bebida-5" type="checkbox" onchange="actualizarPrecio(5)"> Con bebida</label>
           <button id="  " type="button" onclick="agregarCarrito(5)">Agregar al carrito</button>
         </form>
       </div>
@@ -147,7 +148,6 @@
   <footer>
     <p>2025 Burger House</p>
   </footer>
-
-  <script type="text/javascript" src="funciones.js"></script>
+  
 </body>
 </html>
