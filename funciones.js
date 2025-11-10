@@ -1,4 +1,3 @@
-
 const productos = [
   { nombre: "Bacon Cheese", descripcion: "Queso cheddar, bacon y salsa especial.", precio: 2500, imagen: "imagenes/bacon-cheese-burg.jpg" },
   { nombre: "Clásica", descripcion: "Lechuga, tomate, cebolla y mayonesa casera.", precio: 2200, imagen: "imagenes/clasica-burg.jpg" },
@@ -17,32 +16,40 @@ const productos = [
  * @param {boolean} [bebida=false] - Indica si se agrega bebida (+$400).
  * @returns {number} Precio final calculado con los adicionales.
  */
-function calcularPrecioFinal(base, med = 1, papas = false, bebida = false) {
-  let total = base + (med - 1) * 200; // +$200 por medallón extra
+const calcularPrecioFinal = (base, med = 1, papas = false, bebida = false) => {
+  let total = base + (med - 1) * 200;
   if (papas) total += 300;
   if (bebida) total += 400;
   return total;
-}
+};
 
 /**
- * Agrega un producto al carrito con sus opciones seleccionadas (medallones, papas, bebida).
- * Guarda los datos en localStorage.
+ * Agrega un producto al carrito con sus opciones seleccionadas.
+ * Guarda la información en localStorage.
  * @method agregarCarrito
  * @param {number} id - Índice del producto dentro del array `productos`.
  */
-function agregarCarrito(id) {
+const agregarCarrito = (id) => {
   const med = parseInt(document.getElementById(`med-${id}`)?.value || 1, 10);
   const papas = !!document.getElementById(`papas-${id}`)?.checked;
   const bebida = !!document.getElementById(`bebida-${id}`)?.checked;
+
   const base = productos[id].precio;
   const precio = calcularPrecioFinal(base, med, papas, bebida);
 
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  carrito = carrito.map(item => {
+  // Normalizar entradas antiguas (solo id) a objetos completos
+  carrito = carrito.map((item) => {
     if (typeof item === "number" || typeof item === "string") {
       const pid = parseInt(item, 10);
-      return { id: pid, med: 1, papas: false, bebida: false, precio: productos[pid].precio };
+      return {
+        id: pid,
+        med: 1,
+        papas: false,
+        bebida: false,
+        precio: productos[pid].precio
+      };
     }
     return item;
   });
@@ -51,18 +58,21 @@ function agregarCarrito(id) {
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
   alert(`${productos[id].nombre} agregada al carrito 🛍️`);
-}
+};
+window.agregarCarrito = agregarCarrito;
 
 /**
- * Carga los productos guardados en el carrito desde localStorage y los muestra en pantalla.
- * También calcula el total general de la compra.
+ * Carga los productos guardados en el carrito desde localStorage,
+ * los muestra en la página del carrito y calcula el total general.
+ * Si la página no tiene contenedor de carrito, no hace nada.
  * @method cargarCarrito
  */
-function cargarCarrito() {
-  console.log("Cargando carrito...");
+const cargarCarrito = () => {
   const contenedor = document.getElementById("mostrar-carrito");
-  const totalBox  = document.getElementById("total-carrito"); 
-  if (!contenedor) return console.error("No se encontró #mostrar-carrito");
+  const totalBox = document.getElementById("total-carrito");
+
+  // Si no estoy en carrito.html, salgo sin loguear error
+  if (!contenedor) return;
 
   let carrito = JSON.parse(localStorage.getItem("carrito"));
 
@@ -72,10 +82,17 @@ function cargarCarrito() {
     return;
   }
 
-  carrito = carrito.map(item => {
+  // Normalizar posibles entradas viejas
+  carrito = carrito.map((item) => {
     if (typeof item === "number" || typeof item === "string") {
       const pid = parseInt(item, 10);
-      return { id: pid, med: 1, papas: false, bebida: false, precio: productos[pid].precio };
+      return {
+        id: pid,
+        med: 1,
+        papas: false,
+        bebida: false,
+        precio: productos[pid].precio
+      };
     }
     return item;
   });
@@ -100,38 +117,44 @@ function cargarCarrito() {
   });
 
   contenedor.innerHTML = html;
-  if (totalBox) totalBox.innerHTML = `<strong>Total de la compra: $${totalGeneral}</strong>`;
+
+  if (totalBox) {
+    totalBox.innerHTML = `<strong>Total de la compra: $${totalGeneral}</strong>`;
+  }
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
-}
+};
+window.cargarCarrito = cargarCarrito;
 
 /**
  * Elimina un producto específico del carrito según su índice.
- * Si no quedan productos, elimina la clave completa del localStorage.
+ * Actualiza el localStorage y vuelve a renderizar el carrito.
  * @method eliminarProducto
- * @param {number} id - Índice del producto dentro del array del carrito.
+ * @param {number} idx - Índice del producto dentro del array del carrito.
  */
-function eliminarProducto(id) {
+const eliminarProducto = (idx) => {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  carrito.splice(id, 1);
+  carrito.splice(idx, 1);
+
   if (carrito.length > 0) {
     localStorage.setItem("carrito", JSON.stringify(carrito));
   } else {
     localStorage.removeItem("carrito");
   }
+
   cargarCarrito();
-}
+};
+window.eliminarProducto = eliminarProducto;
 
 /**
  * Vacía completamente el carrito y actualiza la vista.
  * @method vaciarCarrito
  */
-function vaciarCarrito() {
+const vaciarCarrito = () => {
   localStorage.removeItem("carrito");
   cargarCarrito();
-}
-
-document.addEventListener("DOMContentLoaded", cargarCarrito);
+};
+window.vaciarCarrito = vaciarCarrito;
 
 /**
  * Actualiza el precio mostrado en el menú en tiempo real
@@ -139,17 +162,27 @@ document.addEventListener("DOMContentLoaded", cargarCarrito);
  * @method actualizarPrecio
  * @param {number} id - Índice del producto dentro del array `productos`.
  */
-function actualizarPrecio(id) {
+const actualizarPrecio = (id) => {
   const base = productos[id].precio;
 
-  const medallones = parseInt(document.getElementById(`med-${id}`).value);
-  const conPapas = document.getElementById(`papas-${id}`).checked;
-  const conBebida = document.getElementById(`bebida-${id}`).checked;
+  const medallones = parseInt(document.getElementById(`med-${id}`)?.value || 1, 10);
+  const conPapas = !!document.getElementById(`papas-${id}`)?.checked;
+  const conBebida = !!document.getElementById(`bebida-${id}`)?.checked;
 
-  let total = base + (medallones - 1) * 200;
-  if (conPapas) total += 300;
-  if (conBebida) total += 400;
+  const total = calcularPrecioFinal(base, medallones, conPapas, conBebida);
 
   const precioTag = document.getElementById(`precio-${id}`);
-  precioTag.innerHTML = `<strong>Precio: $${total}</strong>`;
-}
+  if (precioTag) {
+    precioTag.innerHTML = `<strong>Precio: $${total}</strong>`;
+  }
+};
+window.actualizarPrecio = actualizarPrecio;
+
+/**
+ * Inicializa la carga del carrito automáticamente
+ * cuando el DOM está listo (solo afecta a páginas con carrito).
+ * @method DOMContentLoaded
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  cargarCarrito();
+});

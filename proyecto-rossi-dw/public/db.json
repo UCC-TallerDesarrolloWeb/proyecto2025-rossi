@@ -1,0 +1,46 @@
+{
+  "sucursales": [
+    { 
+      "id": 1, 
+      "nombre": "Buenos Aires", 
+      "direccion": "Montañeses 2219, Buenos Aires", 
+      "horario": "Lun - Dom: 11:00 - 23:00", 
+      "imagen": "/imagenes/buenosaires.jpeg" 
+    },
+    { 
+      "id": 2, 
+      "nombre": "La Plata", 
+      "direccion": "Calle 47 291, La Plata", 
+      "horario": "Lun - Dom: 11:00 - 23:00", 
+      "imagen": "/imagenes/laplata.jpeg" 
+    },
+    { 
+      "id": 3, 
+      "nombre": "Córdoba", 
+      "direccion": "Av. Hipólito Yrigoyen 419, Córdoba", 
+      "horario": "Lun - Dom: 11:00 - 23:00", 
+      "imagen": "/imagenes/cordoba.jpeg" 
+    },
+    { 
+      "id": 4, 
+      "nombre": "Mendoza", 
+      "direccion": "Av. Entre Ríos 1965, Mendoza", 
+      "horario": "Lun - Dom: 11:00 - 23:00", 
+      "imagen": "/imagenes/mendoza.jpeg" 
+    },
+    { 
+      "id": 5, 
+      "nombre": "Rosario", 
+      "direccion": "Presidente Roca 749, Rosario", 
+      "horario": "Lun - Dom: 11:00 - 23:00", 
+      "imagen": "/imagenes/rosario.jpeg" 
+    },
+    { 
+      "id": 6, 
+      "nombre": "Santa Fe", 
+      "direccion": "Av Del Libertador 2335, Santa Fe", 
+      "horario": "Lun - Dom: 11:00 - 23:00", 
+      "imagen": "/imagenes/santafe.jpeg" 
+    }
+  ]
+}
