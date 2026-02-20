@@ -1,16 +1,10 @@
-// src/pages/Home.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-// Importamos solo el array de productos desde utilidades
-import { productos } from '@utils/funciones'; 
-
-// Importa el alias de estilos
-import '@styles/main.scss';
+import { Link } from "react-router-dom";
+import { productos } from "@utils/funciones";
+import "@styles/main.scss";
 
 const Home = () => {
-  // Tomamos solo los primeros 3 productos para la sección "Especialidades"
   const especialidades = productos.slice(0, 3);
-  
+
   return (
     <>
       <section className="principal">
@@ -22,10 +16,9 @@ const Home = () => {
       <section className="section">
         <h2>Nuestras Especialidades</h2>
         <div className="grid">
-          {especialidades.map((p, index) => (
-            <div key={index} className="card">
+          {especialidades.map((p) => (
+            <div key={p.nombre} className="card">
               <Link to="/menu">
-                {/* Usamos p.imagen que es la referencia correcta importada en funciones.js */}
                 <img src={p.imagen} alt={`Hamburguesa ${p.nombre}`} />
                 <h3>{p.nombre}</h3>
                 <p>{p.descripcion}</p>

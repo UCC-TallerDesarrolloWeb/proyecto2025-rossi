@@ -1,36 +1,38 @@
+import { useId } from "react";
 
-import React from 'react';
-
-const Input = ({ 
-  type = 'text', 
-  name, 
-  placeholder, 
-  value, 
-  onChange, 
-  error, 
-  required = false 
+const Input = ({
+  label,
+  type = "text",
+  name,
+  placeholder,
+  value,
+  onChange,
+  error,
+  required,
 }) => {
-  const inputId = name ? `input-${name}` : `input-generic`;
+  const id = useId();
 
   return (
     <div className="input-group">
+      {label && (
+        <label htmlFor={id}>
+          {label}
+          {required && " *"}
+        </label>
+      )}
+
       <input
+        id={id}
         type={type}
         name={name}
-        id={inputId}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
         required={required}
-r
-        aria-invalid={!!error} 
-        aria-describedby={error ? `${inputId}-error` : undefined}
+        className={error ? "input-error" : ""}
       />
-      {error && (
-        <p id={`${inputId}-error`} className="error-message" role="alert">
-          {error}
-        </p>
-      )}
+
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };
