@@ -1,0 +1,55 @@
+@use '@styles/variables' as *;
+
+.lista-carrito {
+    display: grid;
+    gap: 20px;
+}
+
+.producto-carrito {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    align-items: center;
+    gap: 25px;
+
+    img {
+        width: 180px;
+        height: 130px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .boton {
+        width: auto;
+    }
+}
+
+.resumen-carrito {
+    margin-top: 30px;
+    padding: 24px;
+    border-radius: 10px;
+    background: $tarjeta;
+    text-align: right;
+
+    .boton {
+        width: auto;
+    }
+}
+
+.total-carrito {
+    margin: 0 0 18px;
+    color: $amarillo;
+    font-size: 1.45rem;
+    font-weight: 800;
+}
+
+@media (max-width: 620px) {
+    .producto-carrito {
+        grid-template-columns: 1fr;
+
+        img {
+            width: 100%;
+            height: 200px;
+        }
+    }
+}

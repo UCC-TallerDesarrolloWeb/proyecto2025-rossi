@@ -1,0 +1,27 @@
+@use '@styles/variables' as *;
+
+.boton {
+    width: 100%;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 6px;
+    background: $amarillo;
+    color: #111111;
+    font-weight: 800;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: #ffd15c;
+    }
+
+    &--peligro {
+        background: $peligro;
+        color: $blanco;
+
+        &:hover,
+        &:focus {
+            background: #ed6656;
+        }
+    }
+}

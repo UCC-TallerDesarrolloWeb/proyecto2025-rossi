@@ -1,0 +1,22 @@
+@use '@styles/variables' as *;
+
+.intro-contacto {
+    margin: -18px auto 32px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.formulario-contacto {
+    width: min(650px, 100%);
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+    background: $tarjeta;
+}
+
+.mensaje-formulario {
+    min-height: 25px;
+    margin-bottom: 12px;
+    color: $amarillo;
+    font-weight: 600;
+}

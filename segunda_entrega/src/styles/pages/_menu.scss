@@ -1,0 +1,39 @@
+@use '@styles/variables' as *;
+
+.opciones {
+    margin-top: 20px;
+    display: grid;
+    gap: 14px;
+}
+
+.opcion-check {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    input {
+        width: auto;
+        accent-color: $amarillo;
+    }
+}
+
+.notificacion {
+    min-height: 0;
+    margin-bottom: 25px;
+    text-align: center;
+
+    &:not(:empty) {
+        padding: 18px;
+        border: 1px solid $amarillo;
+        border-radius: 8px;
+        background: $tarjeta;
+    }
+
+    p {
+        margin: 0 0 12px;
+    }
+
+    .boton {
+        width: auto;
+    }
+}

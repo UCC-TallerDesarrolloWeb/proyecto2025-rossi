@@ -1,0 +1,35 @@
+@use '@styles/variables' as *;
+
+.tarjeta {
+    overflow: hidden;
+    border-radius: 12px;
+    background: $tarjeta;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+    &__imagen {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    &__contenido {
+        padding: 22px;
+    }
+
+    h3 {
+        margin: 0 0 12px;
+        color: $amarillo;
+        font-size: 1.35rem;
+    }
+
+    p {
+        margin: 0 0 14px;
+        line-height: 1.55;
+    }
+}
+
+.precio {
+    color: $amarillo;
+    font-size: 1.25rem;
+    font-weight: 800;
+}

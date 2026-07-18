@@ -1,0 +1,70 @@
+@use '@styles/variables' as *;
+
+.cabecera {
+    background: $cabecera;
+    border-bottom: 3px solid $amarillo;
+
+    &__contenido {
+        width: min(1180px, 92%);
+        min-height: 104px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+    }
+
+    &__marca {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        img {
+            width: 76px;
+            height: 76px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin: 0;
+            color: $amarillo;
+            font-size: 1.65rem;
+            line-height: 1.1;
+        }
+    }
+}
+
+.navegacion {
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 27px;
+        list-style: none;
+    }
+
+    &__enlace {
+        font-weight: 700;
+        transition: color 0.2s ease;
+
+        &:hover,
+        &:focus,
+        &--activo {
+            color: $amarillo;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .cabecera__contenido {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+    }
+
+    .navegacion ul {
+        justify-content: center;
+    }
+}

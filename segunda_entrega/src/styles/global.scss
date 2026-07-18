@@ -1,0 +1,109 @@
+@use '@styles/variables' as *;
+@use '@styles/components/header';
+@use '@styles/components/footer';
+@use '@styles/components/boton';
+@use '@styles/components/tarjeta';
+@use '@styles/components/formulario';
+@use '@styles/pages/home';
+@use '@styles/pages/menu';
+@use '@styles/pages/sucursales';
+@use '@styles/pages/contacto';
+@use '@styles/pages/carrito';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: $fondo;
+    color: $blanco;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+.aplicacion {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.contenedor {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+    padding: 55px 0 70px;
+}
+
+.titulo-seccion {
+    margin: 0 0 36px;
+    color: $amarillo;
+    text-align: center;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.grilla {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.mensaje-estado,
+.mensaje-vacio {
+    padding: 30px;
+    border-radius: 10px;
+    background: $tarjeta;
+    text-align: center;
+}
+
+.mensaje-estado--error,
+.campo-error {
+    color: #ff9185;
+}
+
+.pagina-no-encontrada {
+    text-align: center;
+
+    .boton {
+        width: auto;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .grilla {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .grilla {
+        grid-template-columns: 1fr;
+    }
+}

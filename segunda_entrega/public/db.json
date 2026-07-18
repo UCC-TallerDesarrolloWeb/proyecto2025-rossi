@@ -1,0 +1,18 @@
+{
+    "hamburguesas": [
+        { "id": 1, "nombre": "Bacon Cheese", "descripcion": "Queso cheddar, bacon y salsa especial.", "precio": 2500, "imagen": "bacon-cheese-burg.jpg" },
+        { "id": 2, "nombre": "Clásica", "descripcion": "Lechuga, tomate, cebolla y mayonesa casera.", "precio": 2200, "imagen": "clasica-burg.jpg" },
+        { "id": 3, "nombre": "Veggie", "descripcion": "Medallón vegano, queso brie y guacamole casero.", "precio": 2300, "imagen": "veggie-burg.jpg" },
+        { "id": 4, "nombre": "Ruta 66", "descripcion": "Salsa especial, queso emmental y cebolla caramelizada.", "precio": 2700, "imagen": "route-66-burb.jpg" },
+        { "id": 5, "nombre": "Mexicana", "descripcion": "Jalapeños, guacamole, barbacoa y nachos.", "precio": 2600, "imagen": "mexicana-burg.jpg" },
+        { "id": 6, "nombre": "Pollo Crispy", "descripcion": "Pollo crispy, alioli, tomate, lechuga y huevo frito.", "precio": 2800, "imagen": "pollo-burg.jpg" }
+    ],
+    "sucursales": [
+        { "id": 1, "ciudad": "Buenos Aires", "direccion": "Montañeses 2219, Buenos Aires", "imagen": "buenosaires.jpeg" },
+        { "id": 2, "ciudad": "La Plata", "direccion": "Calle 47 291, La Plata", "imagen": "laplata.jpeg" },
+        { "id": 3, "ciudad": "Córdoba", "direccion": "Av. Hipólito Yrigoyen 419, Córdoba", "imagen": "cordoba.jpeg" },
+        { "id": 4, "ciudad": "Mendoza", "direccion": "Av. Entre Ríos 1965, Mendoza", "imagen": "mendoza.jpeg" },
+        { "id": 5, "ciudad": "Rosario", "direccion": "Presidente Roca 749, Rosario", "imagen": "rosario.jpeg" },
+        { "id": 6, "ciudad": "Santa Fe", "direccion": "Av. del Libertador 2335, Santa Fe", "imagen": "santafe.jpeg" }
+    ]
+}
