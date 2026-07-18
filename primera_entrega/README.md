@@ -49,4 +49,3 @@ Los cinco documentos HTML están en la raíz. Los estilos están en `css/estilos
 
 Lorenzo Rossi Bossio
 
-Para conocer más sobre las tecnologías utilizadas, consultá la [documentación de MDN](https://developer.mozilla.org/es/).

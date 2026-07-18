@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lorenzo Rossi Bossio">
+        <meta name="description" content="Menú de hamburguesas de Burger House.">
+        <meta name="keywords" content="menú, hamburguesas, Burger House">
+        <title>Burger House | Menú</title>
+        <link rel="icon" href="imagenes/favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+        <script src="funciones.js" defer></script>
+    </head>
+    <body>
+        <header class="cabecera">
+            <div class="cabecera-contenido">
+                <a class="marca" href="index.html">
+                    <img src="imagenes/logo.png" alt="Logo de Burger House">
+                    <h1>Burger<br>House</h1>
+                </a>
+                <nav aria-label="Navegación principal">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="menu.html" aria-current="page">Menú</a>
+                        </li>
+                        <li>
+                            <a href="sucursales.html">Sucursales</a>
+                        </li>
+                        <li>
+                            <a href="contacto.html">Contacto</a>
+                        </li>
+                        <li>
+                            <a href="carrito.html">Carrito</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="contenedor">
+            <section aria-labelledby="titulo-menu">
+                <h2 class="titulo-seccion" id="titulo-menu">Nuestras Hamburguesas</h2>
+                <div class="grilla">
+                    <article class="tarjeta">
+                        <img class="tarjeta-imagen" src="imagenes/bacon-cheese-burg.jpg" alt="Hamburguesa Bacon Cheese">
+                        <div class="tarjeta-contenido">
+                            <h3>Bacon Cheese</h3>
+                            <p>Queso cheddar, bacon y salsa especial.</p>
+                            <p class="precio">$2500</p>
+                            <div class="opciones">
+                                <div class="campo-select">
+                                    <label for="medallones-bacon">Medallones</label>
+                                    <select id="medallones-bacon">
+                                        <option value="1">1 medallón</option>
+                                        <option value="2">2 medallones</option>
+                                        <option value="3">3 medallones</option>
+                                    </select>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="papas-bacon" type="checkbox">
+                                    <label for="papas-bacon">Agregar papas (+$100)</label>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="bebida-bacon" type="checkbox">
+                                    <label for="bebida-bacon">Agregar bebida (+$100)</label>
+                                </div>
+                                <button
+                                    class="boton"
+                                    type="button"
+                                    onclick="agregarAlCarrito('Bacon Cheese', 2500, 'imagenes/bacon-cheese-burg.jpg', 'medallones-bacon', 'papas-bacon', 'bebida-bacon')"
+                                >Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="tarjeta-imagen" src="imagenes/clasica-burg.jpg" alt="Hamburguesa Clásica">
+                        <div class="tarjeta-contenido">
+                            <h3>Clásica</h3>
+                            <p>Lechuga, tomate, cebolla y mayonesa casera.</p>
+                            <p class="precio">$2200</p>
+                            <div class="opciones">
+                                <div class="campo-select">
+                                    <label for="medallones-clasica">Medallones</label>
+                                    <select id="medallones-clasica">
+                                        <option value="1">1 medallón</option>
+                                        <option value="2">2 medallones</option>
+                                        <option value="3">3 medallones</option>
+                                    </select>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="papas-clasica" type="checkbox">
+                                    <label for="papas-clasica">Agregar papas (+$100)</label>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="bebida-clasica" type="checkbox">
+                                    <label for="bebida-clasica">Agregar bebida (+$100)</label>
+                                </div>
+                                <button
+                                    class="boton"
+                                    type="button"
+                                    onclick="agregarAlCarrito('Clásica', 2200, 'imagenes/clasica-burg.jpg', 'medallones-clasica', 'papas-clasica', 'bebida-clasica')"
+                                >Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="tarjeta-imagen" src="imagenes/veggie-burg.jpg" alt="Hamburguesa Veggie">
+                        <div class="tarjeta-contenido">
+                            <h3>Veggie</h3>
+                            <p>Medallón vegano, queso brie y guacamole casero.</p>
+                            <p class="precio">$2300</p>
+                            <div class="opciones">
+                                <div class="campo-select">
+                                    <label for="medallones-veggie">Medallones</label>
+                                    <select id="medallones-veggie">
+                                        <option value="1">1 medallón</option>
+                                        <option value="2">2 medallones</option>
+                                        <option value="3">3 medallones</option>
+                                    </select>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="papas-veggie" type="checkbox">
+                                    <label for="papas-veggie">Agregar papas (+$100)</label>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="bebida-veggie" type="checkbox">
+                                    <label for="bebida-veggie">Agregar bebida (+$100)</label>
+                                </div>
+                                <button
+                                    class="boton"
+                                    type="button"
+                                    onclick="agregarAlCarrito('Veggie', 2300, 'imagenes/veggie-burg.jpg', 'medallones-veggie', 'papas-veggie', 'bebida-veggie')"
+                                >Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="tarjeta-imagen" src="imagenes/route-66-burb.jpg" alt="Hamburguesa Ruta 66">
+                        <div class="tarjeta-contenido">
+                            <h3>Ruta 66</h3>
+                            <p>Salsa especial, queso emmental y cebolla caramelizada.</p>
+                            <p class="precio">$2700</p>
+                            <div class="opciones">
+                                <div class="campo-select">
+                                    <label for="medallones-ruta">Medallones</label>
+                                    <select id="medallones-ruta">
+                                        <option value="1">1 medallón</option>
+                                        <option value="2">2 medallones</option>
+                                        <option value="3">3 medallones</option>
+                                    </select>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="papas-ruta" type="checkbox">
+                                    <label for="papas-ruta">Agregar papas (+$100)</label>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="bebida-ruta" type="checkbox">
+                                    <label for="bebida-ruta">Agregar bebida (+$100)</label>
+                                </div>
+                                <button
+                                    class="boton"
+                                    type="button"
+                                    onclick="agregarAlCarrito('Ruta 66', 2700, 'imagenes/route-66-burb.jpg', 'medallones-ruta', 'papas-ruta', 'bebida-ruta')"
+                                >Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="tarjeta-imagen" src="imagenes/mexicana-burg.jpg" alt="Hamburguesa Mexicana">
+                        <div class="tarjeta-contenido">
+                            <h3>Mexicana</h3>
+                            <p>Jalapeños, guacamole, barbacoa y nachos.</p>
+                            <p class="precio">$2600</p>
+                            <div class="opciones">
+                                <div class="campo-select">
+                                    <label for="medallones-mexicana">Medallones</label>
+                                    <select id="medallones-mexicana">
+                                        <option value="1">1 medallón</option>
+                                        <option value="2">2 medallones</option>
+                                        <option value="3">3 medallones</option>
+                                    </select>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="papas-mexicana" type="checkbox">
+                                    <label for="papas-mexicana">Agregar papas (+$100)</label>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="bebida-mexicana" type="checkbox">
+                                    <label for="bebida-mexicana">Agregar bebida (+$100)</label>
+                                </div>
+                                <button
+                                    class="boton"
+                                    type="button"
+                                    onclick="agregarAlCarrito('Mexicana', 2600, 'imagenes/mexicana-burg.jpg', 'medallones-mexicana', 'papas-mexicana', 'bebida-mexicana')"
+                                >Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="tarjeta-imagen" src="imagenes/pollo-burg.jpg" alt="Hamburguesa Pollo Crispy">
+                        <div class="tarjeta-contenido">
+                            <h3>Pollo Crispy</h3>
+                            <p>Pollo crispy, alioli, tomate, lechuga y huevo frito.</p>
+                            <p class="precio">$2800</p>
+                            <div class="opciones">
+                                <div class="campo-select">
+                                    <label for="medallones-pollo">Medallones</label>
+                                    <select id="medallones-pollo">
+                                        <option value="1">1 medallón</option>
+                                        <option value="2">2 medallones</option>
+                                        <option value="3">3 medallones</option>
+                                    </select>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="papas-pollo" type="checkbox">
+                                    <label for="papas-pollo">Agregar papas (+$100)</label>
+                                </div>
+                                <div class="opcion-check">
+                                    <input id="bebida-pollo" type="checkbox">
+                                    <label for="bebida-pollo">Agregar bebida (+$100)</label>
+                                </div>
+                                <button
+                                    class="boton"
+                                    type="button"
+                                    onclick="agregarAlCarrito('Pollo Crispy', 2800, 'imagenes/pollo-burg.jpg', 'medallones-pollo', 'papas-pollo', 'bebida-pollo')"
+                                >Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer class="pie">
+            <p>© 2026 Burger House</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Lorenzo Rossi Bossio">
+        <meta name="description" content="Inicio de Burger House, hamburguesas artesanales.">
+        <meta name="keywords" content="hamburguesas, Burger House, especialidades">
+        <title>Burger House | Inicio</title>
+        <link rel="icon" href="imagenes/favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+        <script src="funciones.js" defer></script>
+    </head>
+    <body>
+        <header class="cabecera">
+            <div class="cabecera-contenido">
+                <a class="marca" href="index.html">
+                    <img src="imagenes/logo.png" alt="Logo de Burger House">
+                    <h1>Burger<br>House</h1>
+                </a>
+                <nav aria-label="Navegación principal">
+                    <ul>
+                        <li>
+                            <a href="index.html" aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="menu.html">Menú</a>
+                        </li>
+                        <li>
+                            <a href="sucursales.html">Sucursales</a>
+                        </li>
+                        <li>
+                            <a href="contacto.html">Contacto</a>
+                        </li>
+                        <li>
+                            <a href="carrito.html">Carrito</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero" aria-labelledby="titulo-hero">
+                <img src="imagenes/principal-burg.jpg" alt="Hamburguesa doble con queso y vegetales">
+                <div class="hero-capa">
+                    <h2 id="titulo-hero">Las mejores hamburguesas del país</h2>
+                </div>
+            </section>
+            <section class="contenedor" aria-labelledby="titulo-especialidades">
+                <h2 class="titulo-seccion" id="titulo-especialidades">Nuestras Especialidades</h2>
+                <div class="grilla">
+                    <article class="tarjeta">
+                        <img class="tarjeta-imagen" src="imagenes/bacon-cheese-burg.jpg" alt="Hamburguesa Bacon Cheese">
+                        <div class="tarjeta-contenido">
+                            <h3>Bacon Cheese</h3>
+                            <p>Queso cheddar, bacon y salsa especial.</p>
+                        </div>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="tarjeta-imagen" src="imagenes/clasica-burg.jpg" alt="Hamburguesa Clásica">
+                        <div class="tarjeta-contenido">
+                            <h3>Clásica</h3>
+                            <p>Lechuga, tomate, cebolla y mayonesa casera.</p>
+                        </div>
+                    </article>
+                    <article class="tarjeta">
+                        <img class="tarjeta-imagen" src="imagenes/veggie-burg.jpg" alt="Hamburguesa Veggie">
+                        <div class="tarjeta-contenido">
+                            <h3>Veggie</h3>
+                            <p>Medallón vegano, queso brie y guacamole casero.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <footer class="pie">
+            <p>© 2026 Burger House</p>
+        </footer>
+    </body>
+</html>
