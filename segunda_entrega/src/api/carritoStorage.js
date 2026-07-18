@@ -15,13 +15,12 @@ export const obtenerCarrito = () => {
     }
 };
 
-export const guardarCarrito = (carrito) => {
+const guardarCarrito = (carrito) => {
     localStorage.setItem(CLAVE_CARRITO, JSON.stringify(carrito));
 };
 
 export const agregarProducto = (producto) => {
-    const carrito = obtenerCarrito();
-    const carritoActualizado = [...carrito, producto];
+    const carritoActualizado = [...obtenerCarrito(), producto];
     guardarCarrito(carritoActualizado);
     return carritoActualizado;
 };
