@@ -4,7 +4,6 @@ import Carrito from '@pages/Carrito';
 import Contacto from '@pages/Contacto';
 import Home from '@pages/Home';
 import Menu from '@pages/Menu';
-import NoEncontrada from '@pages/NoEncontrada';
 import Sucursales from '@pages/Sucursales';
 
 const App = () => {
@@ -17,7 +16,6 @@ const App = () => {
                     <Route path="sucursales" element={<Sucursales />} />
                     <Route path="contacto" element={<Contacto />} />
                     <Route path="carrito" element={<Carrito />} />
-                    <Route path="*" element={<NoEncontrada />} />
                 </Route>
             </Routes>
         </BrowserRouter>
